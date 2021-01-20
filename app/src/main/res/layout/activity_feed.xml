@@ -9,7 +9,7 @@
     <!-- TODO: PHASE 1 -->
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/phase_1_recycler_view"
+        android:id="@+id/Screen2List"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
