@@ -13,6 +13,8 @@
         android:id="@+id/activityDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:padding="2.5dp"
         android:text="@string/date" />
 
     <TextView
@@ -20,12 +22,17 @@
         android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:maxLines="2"
         android:text="@string/head" />
 
     <TextView
         android:id="@+id/activitySubhead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:padding="2.5dp"
             android:maxLines="1"
         android:text="@string/subhead" />
 
