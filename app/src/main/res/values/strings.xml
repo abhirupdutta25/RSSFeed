@@ -3,4 +3,9 @@
     <string name="date">Date</string>
     <string name="head">Head</string>
     <string name="subhead">Subhead</string>
+    <string name="time_and_date">Time and Date</string>
+    <string name="title">Title</string>
+    <string name="picture_of_the_logo_of_un">Picture of the logo of UN</string>
+    <string name="description">Description</string>
+    <string name="floating_action_button">Floating Action Button</string>
 </resources>

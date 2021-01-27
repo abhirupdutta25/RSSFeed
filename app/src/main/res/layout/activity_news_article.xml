@@ -1,12 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     tools:context=".NewsArticleActivity">
 
     <!-- TODO: PHASE 2 -->
+
+
+    <TextView
+            android:text="@string/time_and_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/timeAndDate"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginStart="20dp" />
+
+    <TextView
+            android:text="@string/title"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="119dp"
+            android:id="@+id/title_phase2"
+            app:layout_constraintTop_toBottomOf="@+id/timeAndDate"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" />
+
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="187dp"
+            app:srcCompat="@drawable/un_logo_placeholder"
+            android:id="@+id/un_pic"
+            android:contentDescription="@string/picture_of_the_logo_of_un"
+
+            app:layout_constraintTop_toBottomOf="@+id/title_phase2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="8dp" />
+
+    <TextView
+            android:text="@string/description"
+            android:layout_width="382dp"
+            android:layout_height="182dp"
+            android:id="@+id/description"
+            app:layout_constraintTop_toBottomOf="@+id/un_pic"
+            app:layout_constraintBottom_toTopOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.281"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.482"
+            android:layout_marginTop="30dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="56dp"
+            android:layout_height="52dp"
+
+            android:clickable="true"
+            app:srcCompat="@android:drawable/ic_media_next"
+            android:id="@+id/floatingActionButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@string/floating_action_button"
+            android:focusable="true" />
+
+    <androidx.appcompat.widget.Toolbar
+            app:title="VISIT WEBSITE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize"
+            android:id="@+id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

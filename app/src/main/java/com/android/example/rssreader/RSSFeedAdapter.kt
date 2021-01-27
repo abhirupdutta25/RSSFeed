@@ -1,10 +1,12 @@
 package com.android.example.rssreader
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.android.example.rssreader.model.Item
 
@@ -29,8 +31,10 @@ class RSSFeedAdapter (private val feedList: MutableList<Item>): RecyclerView.Ada
         holder.subheadView.text =feedList[position].description
 
         holder.entryView.setOnClickListener{
-            //TODO onclick page 3 with link
-            println("Have to open the link on page 3 here")
+            val intent = Intent(it.context, NewsArticleActivity::class.java)
+
+            startActivity(it.context,intent, null)
+//            println("Have to open the link on page 3 here")
         }
     }
 
