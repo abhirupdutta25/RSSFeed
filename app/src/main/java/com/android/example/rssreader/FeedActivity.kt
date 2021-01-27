@@ -2,6 +2,8 @@ package com.android.example.rssreader
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.example.rssreader.model.Item
 import com.android.example.rssreader.model.RSSWrapper
@@ -12,7 +14,6 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.simplexml.SimpleXmlConverterFactory
 
-
 class FeedActivity : AppCompatActivity() {
 
     /* Used for fetching rss feed */
@@ -20,6 +21,7 @@ class FeedActivity : AppCompatActivity() {
 
     /* Holds all News Articles for Selected Topic */
     private val rssFeedList = mutableListOf<Item>()     // Hint: You'll need this for your adapter
+    val rv = findViewById<RecyclerView>(R.id.recycle_feed)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,10 +32,12 @@ class FeedActivity : AppCompatActivity() {
 
 
         // ========== PHASE 1 : from here ==========================================================
+
         // TODO: Add RecyclerView here based on Item objects
 
 
-        val rv = findViewById<RecyclerView>(R.id.phase_1_recycler_view)
+        rv.layoutManager = LinearLayoutManager(this)
+        rv.adapter = RSSFeedAdapter(rssFeedList)
         // ========== PHASE 1 : to here ============================================================
 
 
@@ -55,6 +59,8 @@ class FeedActivity : AppCompatActivity() {
             }
 
             // TODO PHASE 1 : Update RecyclerView list and notify data set changed
+            rv.adapter = RSSFeedAdapter(rssFeedList)
+            Toast.makeText(applicationContext, "The data set has changed", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -64,7 +70,9 @@ class FeedActivity : AppCompatActivity() {
      */
     private fun onRssFailure(call: Call<RSSWrapper?>?, t: Throwable?) {
         // TODO PHASE 1: Log error here since request failed
+        println("The request has failed")
         // TODO PHASE 1: Make toast telling user articles could not be fetched
+        Toast.makeText(applicationContext, "The request has failed", Toast.LENGTH_SHORT).show()
     }
 
     /**
