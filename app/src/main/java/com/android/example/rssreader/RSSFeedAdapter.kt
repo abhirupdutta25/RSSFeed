@@ -32,7 +32,7 @@ class RSSFeedAdapter (private val feedList: MutableList<Item>): RecyclerView.Ada
 
         holder.entryView.setOnClickListener{
             val intent = Intent(it.context, NewsArticleActivity::class.java)
-
+            intent.putExtra("extras", feedList[position])
             startActivity(it.context,intent, null)
 //            println("Have to open the link on page 3 here")
         }
