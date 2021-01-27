@@ -19,7 +19,7 @@ class RSSFeedAdapter (private val feedList: MutableList<Item>): RecyclerView.Ada
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val view = layoutInflater.inflate(R.layout.feed_topic, parent, false)
+        val view = layoutInflater.inflate(R.layout.rss_feed_item, parent, false)
         return FeedViewHolder(view)
     }
 
