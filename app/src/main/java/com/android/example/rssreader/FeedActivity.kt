@@ -38,6 +38,10 @@ class FeedActivity : AppCompatActivity() {
         this.rv = findViewById<RecyclerView>(R.id.recycle_feed)
         this.rv.layoutManager = LinearLayoutManager(this)
         this.rv.adapter = RSSFeedAdapter(rssFeedList)
+        val actionbar = supportActionBar
+        actionbar!!.title = "Health"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
         // ========== PHASE 1 : to here ============================================================
 
 
@@ -45,6 +49,12 @@ class FeedActivity : AppCompatActivity() {
         fetchRssFeed(topicUrl, ::onRssResponse, ::onRssFailure)
     }
 
+    //TODO Uncomment this
+
+//    override fun onSupportNavigateUp(): Boolean {
+//        onBackPressed()
+//        return true
+//    }
 
     /**
      * This will run if fetching the UN News Articles was successful. Add logic here that will update

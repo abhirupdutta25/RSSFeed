@@ -16,6 +16,11 @@ class NewsArticleActivity : AppCompatActivity() {
         // TODO PHASE 2
 
 
+        val actionbar = supportActionBar
+        actionbar!!.title = ""
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
+
         val extras = intent.getParcelableExtra<Item>("extras")!!
         timeAndDate.text = extras.pubDate
         title_phase2.text = extras.title
@@ -27,5 +32,9 @@ class NewsArticleActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
